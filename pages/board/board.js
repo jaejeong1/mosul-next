@@ -1,9 +1,7 @@
 import React, {useState} from 'react'
 import tableStyles from '../common/styles/table.module.css'
-import { useDispatch } from 'react-redux'
-import { addBoard } from '../../redux/reducers/boardReducer.ts'
+
 export default function Board(){
-    const dispatch = useDispatch()
     const [inputs, setInputs] = useState({})
 
     const handleChange = e => {
@@ -12,11 +10,7 @@ export default function Board(){
     }
 
    
-    return (<form onSubmit={e => {
-        e.preventDefault()
-        
-        if(inputs) dispatch(addBoard(inputs))
-    }}><table className={tableStyles.table}>
+    return (<form><table className={tableStyles.table}>
         <thead>
             <tr>
                 <th colSpan={2}><h2>게시판 글쓰기</h2></th>
