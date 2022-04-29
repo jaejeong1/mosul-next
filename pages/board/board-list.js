@@ -33,7 +33,10 @@ export default function BoardList(){
         }
     }
 
-    return(
+    return(<div>
+        <div className={"btn-group"}>
+            <input type={"button"} className={"btn btn-primary"} onClick={register} value={"등록"} />
+        </div>
         <table className={tableStyles.table}>
             <thead>
                 <tr><th colSpan={6}><h2>게시판</h2></th></tr>
@@ -62,5 +65,6 @@ export default function BoardList(){
                     ))}
             </tbody>
         </table>
+        </div>
     )
 }
